@@ -1,0 +1,4 @@
+db.getCollection('Restaurants').find(
+                        { $or: [ {"name" : /Thai$/}, { "address.street" : /street$/}, { "address.zipcode": { $eq: "17988" }} ] }, //Query
+                        { "_id": 0, "city": 1, "cuisine" : 1, "name": 1, "restaurant_id": 1, "address": 1 }) //Projections
+                        .sort( { "restaurant_id": -1 } ) // Sorting

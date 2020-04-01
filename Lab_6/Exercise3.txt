@@ -1,0 +1,4 @@
+db.getCollection('Restaurants').find(
+                        { $and: [{"cuisine" : {$eq: "Delicatessen" } }, { "city" : {$ne: "Brooklyn" } }]}, //Query
+                        { "_id": 0, "city": 1, "cuisine" : 1, "name": 1, "restaurant_id": 1 }) //Projections
+                        .sort( { "name": 1 } ) // Sorting

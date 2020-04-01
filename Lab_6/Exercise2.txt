@@ -1,0 +1,4 @@
+db.getCollection('Restaurants').find(
+                        { "cuisine" : {$eq: "Japanese" } }, //Query
+                        { "city": 1, "cuisine" : 1, "name": 1, "restaurant_id": 1 }) //Projections
+                        .sort( { "restaurant_id": 1 } ) // Sorting
