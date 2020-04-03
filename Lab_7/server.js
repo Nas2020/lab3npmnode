@@ -9,7 +9,7 @@ const Order = require ("./model/Order");
 const connectionString = "mongodb://userNas:userNas@cluster0-shard-00-00-jzbyc.gcp.mongodb.net:27017,cluster0-shard-00-01-jzbyc.gcp.mongodb.net:27017,cluster0-shard-00-02-jzbyc.gcp.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority";
 
 mongoose
-.connect(connectionString, {useNewUrlParser: true},{ useUnifiedTopology: true });
+.connect(connectionString);
   
 const server = http.createServer(function(req, res) {
   var path = url.parse(req.url).pathname;
